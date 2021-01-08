@@ -1,0 +1,3 @@
+export const GET_ALL_USERS = "GET_ALL_USERS"
+export const FETCH_FAILED = "FETCH_FAILED"
+export const CLEAR_ERRORS = "CLEAR_ERRORS"
