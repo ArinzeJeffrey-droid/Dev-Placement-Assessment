@@ -1,12 +1,14 @@
-import logo from './logo.svg';
+import React from 'react'
+import Dashboard from './components/Dashboard'
+import Intro from './components/Intro'
 
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-        <h1>Test</h1>
+    <div className="container">
+      <Intro/>
+      <Dashboard/>
     </div>
-  );
+  )
 }
-
 export default App;
