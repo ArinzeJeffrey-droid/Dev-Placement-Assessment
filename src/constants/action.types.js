@@ -1,3 +1,6 @@
 export const GET_ALL_USERS = "GET_ALL_USERS"
 export const FETCH_FAILED = "FETCH_FAILED"
 export const CLEAR_ERRORS = "CLEAR_ERRORS"
+export const IS_LOADING = "IS_LOADING"
+export const NOT_LOADING = "NOT_LOADING"
+export const SET_API_URL = "SET_API_URL"
