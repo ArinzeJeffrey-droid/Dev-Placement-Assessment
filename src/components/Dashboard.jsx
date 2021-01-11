@@ -13,7 +13,7 @@ import Intro from './Intro';
 
 
 const Dashboard = (props) => {
-    const { dispatch, users, error, loading, api_url, header_title, display, no_results } = props
+    const { dispatch, users, error, loading, api_url, header_title, display } = props
     const [search, setSearch] = useState("")
     const [introSearchField, setIntroSearchField] = useState("")
     useEffect(() => {
@@ -63,7 +63,7 @@ const Dashboard = (props) => {
                 </div>
             </div>
             <div className="users-container">
-            { no_results ? (<h1>No result</h1>) : error ? (<Button404 eventHandler={recallAPI}/>) : loading ? (<Loader/>) : (
+            { error ? (<Button404 eventHandler={recallAPI}/>) : loading ? (<Loader/>) : (
                     <>
                     <div style={display ? css : { transition: "opacity 1s ease-out", opacity: 1}} className="inner">
                         {handleSearch().map((user,index) => (
@@ -88,8 +88,7 @@ const mapStateToProps = state => ({
     loading: state.users.loading,
     api_url: state.users.api_url,
     header_title: state.users.header_title,
-    display: state.users.display,
-    no_results: state.users.no_results
+    display: state.users.display
 })
 
 export default connect(mapStateToProps)(Dashboard);

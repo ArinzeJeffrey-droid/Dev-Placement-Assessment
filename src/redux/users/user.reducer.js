@@ -19,8 +19,7 @@ const INITIAL_STATE = {
     header_title: "All Users",
     loading: false,
     display: false,
-    user_profile: {},
-    no_results: false
+    user_profile: {}
 }
 
 const userReducer =  (state = INITIAL_STATE, action) => {
