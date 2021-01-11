@@ -280,8 +280,12 @@ input::placeholder {
 }
 .users-container .view-user {
   /* border: 1px solid blue; */
-  height: 400px;
-  display: none;
+  /* height: 400px;
+  display: none; */
+  transition: opacity 1s ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
 .users-container .view-user a {
   font-weight: bolder;
@@ -398,7 +402,7 @@ input::placeholder {
   margin-bottom: 0;
 }
 .users-container .user-card .user-wrap .user-details p {
-  font-size: 15px !important;
+  font-size: 13px !important;
   font-style: italic;
   letter-spacing: -0.02px;
   /* opacity: 0.69; */
@@ -449,6 +453,7 @@ input::placeholder {
   border-radius: 35px;
   opacity: 1;
   cursor: pointer;
+  outline: none;
 }
 /* .box2 .footer .pagination {
   display: flex;

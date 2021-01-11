@@ -13,7 +13,7 @@ import Intro from './Intro';
 
 
 const Dashboard = (props) => {
-    const { dispatch, users, error, loading, api_url, header_title, display } = props
+    const { dispatch, users, error, loading, api_url, header_title, display, no_results } = props
     const [search, setSearch] = useState("")
     const [introSearchField, setIntroSearchField] = useState("")
     useEffect(() => {
@@ -37,7 +37,7 @@ const Dashboard = (props) => {
                 || 
             user.name.last
                 .toLowerCase()
-                .includes(search.toLowerCase() || introSearchField.toLowerCase()) : false
+                .includes(search.toLowerCase() || introSearchField.toLowerCase()) : alert("No results")
         );
     };
     return (
@@ -52,10 +52,10 @@ const Dashboard = (props) => {
                     <input type="text" onChange={e => handleChange(e)} name="search" value={search} placeholder="&nbsp;&nbsp;&nbsp;&#x1F50D;Find in list" className="filter"/>
                 </div>
                 <div className="filter-find">
-                    <select name="" className="country filter" id="">
+                    <select disabled name="" className="country filter" id="">
                         <option disabled defaultValue>&nbsp;&nbsp;&nbsp;Country</option>
-                        <option>USA</option>
-                        <option>Africa</option>
+                        <option value="United Kingdom">UK</option>
+                        <option value="Australia">Australia</option>
                     </select>
                 </div>
                 <div className="filter-find">
@@ -63,7 +63,7 @@ const Dashboard = (props) => {
                 </div>
             </div>
             <div className="users-container">
-            { error ? (<Button404 eventHandler={recallAPI}/>) : loading ? (<Loader/>) : (
+            { no_results ? (<h1>No result</h1>) : error ? (<Button404 eventHandler={recallAPI}/>) : loading ? (<Loader/>) : (
                     <>
                     <div style={display ? css : { transition: "opacity 1s ease-out", opacity: 1}} className="inner">
                         {handleSearch().map((user,index) => (
@@ -88,7 +88,8 @@ const mapStateToProps = state => ({
     loading: state.users.loading,
     api_url: state.users.api_url,
     header_title: state.users.header_title,
-    display: state.users.display
+    display: state.users.display,
+    no_results: state.users.no_results
 })
 
 export default connect(mapStateToProps)(Dashboard);
