@@ -2,6 +2,10 @@
 
 This project was created with React js [You can view project here](https://arinzejeffrey-droid.github.io/Dev-Placement-Assessment/).
 
+## About Project
+This is a simple project in which you can search for a random user and download the result as a CSV file.
+
+
 ## Available Scripts
 
 In the project directory, you can run:
