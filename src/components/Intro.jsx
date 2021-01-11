@@ -1,7 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { getAllUsers, getAllUsersFemale, getAllUsersMale } from '../actions/user.actions';
 
 
-const Intro = () => {
+const Intro = (props) => {
+    const { getAllUsersFemale, getAllUsersMale, getAllUsers, search, searchField } = props
     return (
     <div className="box1">
         <div className="center-box">
@@ -11,25 +14,25 @@ const Intro = () => {
                 <p>Welcome to your dashboard, kindly sort through the user base</p>
             </div>
             <div className="search-bar-box">
-                <input className="search-bar" type="text" placeholder="&nbsp;&nbsp;&nbsp;&#x1F50D; Find a user"/>
+                <input name="search" onChange={e => search(e)} value={searchField} className="search-bar" type="text" placeholder="&nbsp;&nbsp;&nbsp;&#x1F50D; Find a user"/>
             </div>
             <div className="action-box">
                 <p>Show Users</p>
                 <div className="action-wrapper">
                     <div className="ac-wrap">
-                        <div className="actions a">
+                        <div className="actions a" onClick={() => getAllUsers()}>
                             <i className="fa fa-users fa-lg" aria-hidden="true"></i>
                         </div>
                         <p>All users</p>
                     </div>
                     <div className="ac-wrap">
-                        <div className="actions b">
+                        <div className="actions b" onClick={() => getAllUsersMale()}>
                             <i className="fa fa-male fa-lg" aria-hidden="true"></i>
                         </div>
                         <p>Male users</p>
                     </div>
                     <div className="ac-wrap">
-                        <div className="actions c">
+                        <div className="actions c" onClick={() => getAllUsersFemale()}>
                             <i className="fa fa-female fa-lg" aria-hidden="true"></i>
                         </div>
                         <p>Female users</p>
@@ -41,4 +44,12 @@ const Intro = () => {
     )
 }
 
-export default Intro
+
+
+const mapDispatchToProps = (dispatch) => ({
+    getAllUsersFemale: () => dispatch(getAllUsersFemale()),
+    getAllUsersMale: () => dispatch(getAllUsersMale()),
+    getAllUsers: () => dispatch(getAllUsers())
+})
+
+export default connect(null, mapDispatchToProps)(Intro)
