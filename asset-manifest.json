@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Dev-Placement-Assessment/static/css/main.c7930110.chunk.css",
+    "main.js": "/Dev-Placement-Assessment/static/js/main.322e9442.chunk.js",
+    "main.js.map": "/Dev-Placement-Assessment/static/js/main.322e9442.chunk.js.map",
+    "runtime-main.js": "/Dev-Placement-Assessment/static/js/runtime-main.69107ca9.js",
+    "runtime-main.js.map": "/Dev-Placement-Assessment/static/js/runtime-main.69107ca9.js.map",
+    "static/css/2.83342f34.chunk.css": "/Dev-Placement-Assessment/static/css/2.83342f34.chunk.css",
+    "static/js/2.8aa157bd.chunk.js": "/Dev-Placement-Assessment/static/js/2.8aa157bd.chunk.js",
+    "static/js/2.8aa157bd.chunk.js.map": "/Dev-Placement-Assessment/static/js/2.8aa157bd.chunk.js.map",
+    "static/js/3.8a652c8b.chunk.js": "/Dev-Placement-Assessment/static/js/3.8a652c8b.chunk.js",
+    "static/js/3.8a652c8b.chunk.js.map": "/Dev-Placement-Assessment/static/js/3.8a652c8b.chunk.js.map",
+    "index.html": "/Dev-Placement-Assessment/index.html",
+    "static/css/2.83342f34.chunk.css.map": "/Dev-Placement-Assessment/static/css/2.83342f34.chunk.css.map",
+    "static/css/main.c7930110.chunk.css.map": "/Dev-Placement-Assessment/static/css/main.c7930110.chunk.css.map",
+    "static/js/2.8aa157bd.chunk.js.LICENSE.txt": "/Dev-Placement-Assessment/static/js/2.8aa157bd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.69107ca9.js",
+    "static/css/2.83342f34.chunk.css",
+    "static/js/2.8aa157bd.chunk.js",
+    "static/css/main.c7930110.chunk.css",
+    "static/js/main.322e9442.chunk.js"
+  ]
+}
