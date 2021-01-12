@@ -2,25 +2,27 @@ import React, { useEffect, useState } from 'react'
 import Footer from './reuseables/Footer';
 import UserCard from './reuseables/Usercard';
 import UserProfile from './reuseables/UserProfile';
-import { connect } from "react-redux"
-import { clearError, getAllUsers, retryCurrentRequest } from '../actions/user.actions';
+import { connect, useDispatch } from "react-redux"
+import { getAllUsers, retryCurrentRequest } from '../actions/user.actions';
 import Loader from './reuseables/loader/Loader';
 import Button404 from './reuseables/404-button/404Button';
 import { css } from "../utils/miscellaneous"
 import Intro from './Intro';
+import { CLEAR_ERRORS } from '../constants/action.types';
 
 
 
 const Dashboard = (props) => {
-    const { users, error, loading, api_url, header_title, display, getAllUsers, retryCurrentRequest, clearError } = props
+    const { users, error, loading, api_url, header_title, display, getAllUsers } = props
     const [search, setSearch] = useState("")
     const [introSearchField, setIntroSearchField] = useState("")
+    const fireAction = useDispatch()
     useEffect(() => {
         getAllUsers()
     },[getAllUsers])
     const recallAPI = () => {
-        retryCurrentRequest(api_url)
-        clearError()
+        fireAction(retryCurrentRequest(api_url))
+        fireAction({ type: CLEAR_ERRORS })
     };
     const handleChange = (e) => {
         setSearch(e.target.value)
@@ -83,8 +85,8 @@ const Dashboard = (props) => {
 
 const mapDispatchToProps = dispatch => ({
     getAllUsers: () => dispatch(getAllUsers()),
-    retryCurrentRequest: () => dispatch(retryCurrentRequest()),
-    clearError: () => dispatch(clearError())
+    // retryCurrentRequest: () => dispatch(retryCurrentRequest()),
+    // clearError: () => dispatch(clearError())
 })
 
 const mapStateToProps = state => ({
