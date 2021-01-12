@@ -1,4 +1,4 @@
-import { GET_ALL_USERS, FETCH_FAILED, IS_LOADING, NOT_LOADING, SET_API_URL, SET_HEADER_TITLE_MALE, SET_HEADER_TITLE_FEMALE, SET_DEFAULT_HEADER_TITLE } from '../constants/action.types'
+import { GET_ALL_USERS, FETCH_FAILED, IS_LOADING, NOT_LOADING, SET_API_URL, SET_HEADER_TITLE_MALE, SET_HEADER_TITLE_FEMALE, SET_DEFAULT_HEADER_TITLE, CLEAR_ERRORS } from '../constants/action.types'
 import axios from "axios"
 import process from "../env"
 
@@ -9,6 +9,9 @@ const URL = process.env.API_URL
  * @param {interger} page_num - Used to query the Api for data results.
  */
 
+export const clearError = () => {
+    return { type: CLEAR_ERRORS }
+}
 
 export const getAllUsers = (page_num) => {
     return async(dispatch) => {

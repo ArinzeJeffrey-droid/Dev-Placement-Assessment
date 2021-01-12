@@ -3,9 +3,8 @@ import Footer from './reuseables/Footer';
 import UserCard from './reuseables/Usercard';
 import UserProfile from './reuseables/UserProfile';
 import { connect } from "react-redux"
-import { getAllUsers, retryCurrentRequest } from '../actions/user.actions';
+import { clearError, getAllUsers, retryCurrentRequest } from '../actions/user.actions';
 import Loader from './reuseables/loader/Loader';
-import { CLEAR_ERRORS } from '../constants/action.types';
 import Button404 from './reuseables/404-button/404Button';
 import { css } from "../utils/miscellaneous"
 import Intro from './Intro';
@@ -13,15 +12,15 @@ import Intro from './Intro';
 
 
 const Dashboard = (props) => {
-    const { dispatch, users, error, loading, api_url, header_title, display } = props
+    const { users, error, loading, api_url, header_title, display, getAllUsers, retryCurrentRequest, clearError } = props
     const [search, setSearch] = useState("")
     const [introSearchField, setIntroSearchField] = useState("")
     useEffect(() => {
-        dispatch(getAllUsers())
-    },[])
+        getAllUsers()
+    },[getAllUsers])
     const recallAPI = () => {
-        dispatch(retryCurrentRequest(api_url))
-        dispatch({ type: CLEAR_ERRORS })
+        retryCurrentRequest(api_url)
+        clearError()
     };
     const handleChange = (e) => {
         setSearch(e.target.value)
@@ -82,6 +81,12 @@ const Dashboard = (props) => {
     );
 }
 
+const mapDispatchToProps = dispatch => ({
+    getAllUsers: () => dispatch(getAllUsers()),
+    retryCurrentRequest: () => dispatch(retryCurrentRequest()),
+    clearError: () => dispatch(clearError())
+})
+
 const mapStateToProps = state => ({
     users: state.users.users,
     error: state.users.error,
@@ -91,4 +96,4 @@ const mapStateToProps = state => ({
     display: state.users.display
 })
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
