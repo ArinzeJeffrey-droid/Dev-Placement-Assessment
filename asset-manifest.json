@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Dev-Placement-Assessment/static/css/main.626b9cb1.chunk.css",
-    "main.js": "/Dev-Placement-Assessment/static/js/main.025a064c.chunk.js",
-    "main.js.map": "/Dev-Placement-Assessment/static/js/main.025a064c.chunk.js.map",
+    "main.js": "/Dev-Placement-Assessment/static/js/main.c296981a.chunk.js",
+    "main.js.map": "/Dev-Placement-Assessment/static/js/main.c296981a.chunk.js.map",
     "runtime-main.js": "/Dev-Placement-Assessment/static/js/runtime-main.69107ca9.js",
     "runtime-main.js.map": "/Dev-Placement-Assessment/static/js/runtime-main.69107ca9.js.map",
     "static/css/2.83342f34.chunk.css": "/Dev-Placement-Assessment/static/css/2.83342f34.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.83342f34.chunk.css",
     "static/js/2.47f1854f.chunk.js",
     "static/css/main.626b9cb1.chunk.css",
-    "static/js/main.025a064c.chunk.js"
+    "static/js/main.c296981a.chunk.js"
   ]
 }
