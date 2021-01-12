@@ -5,7 +5,7 @@ This project was created with React js [You can view project here](https://arinz
 ## About Project
 This is a simple project in which you can search for a random user and download the result as a CSV file.
 
-##CI Badge
+## CI Badge
 [![Deployment Status](https://github.com/ArinzeJeffrey-droid/Dev-Placement-Assessment/workflows/MasterDeployCI/badge.svg)](https://github.com/ArinzeJeffrey-droid/Dev-Placement-Assessment/actions)
 
 ## Available Scripts
