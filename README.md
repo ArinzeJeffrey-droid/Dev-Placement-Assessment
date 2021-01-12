@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Mini User Dashboard Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with React js [You can view project here](https://arinzejeffrey-droid.github.io/Dev-Placement-Assessment/).
+
+## About Project
+This is a simple project in which you can search for a random user and download the result as a CSV file.
+
 
 ## Available Scripts
 
